@@ -1,9 +1,13 @@
 from time import perf_counter
 import dspy
 import agent
+from dotenv import load_dotenv
+import os
 
-
-lm = dspy.LM('deepseek/deepseek-flash', api_key=DEEPSEEK_API_KEY)
+load_dotenv()
+MODEL = os.getenv("MODEL")
+API_KEY = os.getenv("API_KEY")
+lm = dspy.LM(model=MODEL, api_key=API_KEY)
 dspy.configure(lm=lm)
 
 agent1 = agent.AgentRead()

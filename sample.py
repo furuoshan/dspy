@@ -2,7 +2,6 @@ from time import perf_counter
 
 import dspy
 
-DEEPSEEK_API_KEY = "sk-99552d9187f847bd838ea006ceeed418"
 lm = dspy.LM('deepseek/deepseek-flash', api_key=DEEPSEEK_API_KEY)
 dspy.configure(lm=lm)
 
